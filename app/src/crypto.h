@@ -26,10 +26,6 @@ extern "C" {
 #include <sigutils.h>
 #include "zxerror.h"
 
-//#define SS58_BLAKE_PREFIX  (const unsigned char *) "SS58PRE"
-//#define SS58_BLAKE_PREFIX_LEN 7
-#define SS58_ADDRESS_MAX_LEN 60u
-
 #define PREFIX_SIGNATURE_TYPE_ED25519  0
 #define PREFIX_SIGNATURE_TYPE_SR25519  1
 #define PREFIX_SIGNATURE_TYPE_EDCSA    2
@@ -37,9 +33,6 @@ extern "C" {
 #define START_BUFFER                   33
 
 extern uint32_t hdPath[HDPATH_LEN_DEFAULT];
-
-uint8_t crypto_SS58EncodePubkey(uint8_t *buffer, uint16_t buffer_len,
-                                uint16_t addressType, const uint8_t *pubkey);
 
 zxerr_t crypto_fillAddress(key_kind_e addressKind, uint8_t *buffer, uint16_t bufferLen, uint16_t *addrResponseLen);
 
